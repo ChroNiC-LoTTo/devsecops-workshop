@@ -25,5 +25,6 @@ def login():
     
     return jsonify({"message": "Invalid credentials"}), 401
 
-if __name__ == '__main__':
-    app.run(debug=True)
+ if __name__ == '__main__':
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() in ['true', '1', 't']
+    app.run(debug=debug_mode)

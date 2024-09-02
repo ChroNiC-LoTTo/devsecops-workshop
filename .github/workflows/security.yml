@@ -16,6 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        pip install --upgrade setuptools  # Upgrade setuptools to a non-vulnerable version
         pip install -r requirements.txt
         pip install bandit pip-audit pre-commit
       working-directory: exercises/exercise2-cicd-security
